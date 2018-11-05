@@ -15,12 +15,20 @@ pascal 11
 
 let coefficient n p = 
     let rec coef top (head:int list) = 
-        let newHead = List.map2 (+) (head @ [0]) (0 :: head) 
-        if n = top then newHead.[p - 1]
+        if n = top then 
+            head.[p]
         else
+            let newHead = List.map2 (+) (head @ [0]) (0 :: head) 
             coef (top + 1) newHead
-    coef 1 [1]
+    coef 0 [1]
 
 coefficient 10 5
-coefficient 3 2 
-coefficient 4 3 = 6 
+coefficient 3 2
+coefficient 4 3 = 4
+
+[coefficient 5 0 = 1
+ coefficient 5 1 = 5
+ coefficient 5 2 = 10
+ coefficient 5 3 = 10
+ coefficient 5 4 = 5
+ coefficient 5 5 = 1 ] |> List.fold (&&) true
