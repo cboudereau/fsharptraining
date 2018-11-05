@@ -2,7 +2,9 @@ parsing sparse data
 xplot stats
 logging : railway + logging
 
-/!\ triangle's pascal
-type providers
+triangle's pascal
 gitlab codereview
 training fsharp
+  > type providers
+  > Interoperability
+  > C# Mapping

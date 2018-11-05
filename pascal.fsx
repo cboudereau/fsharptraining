@@ -9,9 +9,9 @@ let pascal n =
         | x -> let nv = let h = List.head accu 
                         List.map2 (+) (h @ [0]) (0 :: h) 
                _pascal (nv :: accu)  (x + 1) top
-    _pascal [[1]] 1 n
+    _pascal [[1]] 0 n
 
-pascal 11
+pascal 10
 
 let coefficient n p = 
     let rec coef top (head:int list) = 
