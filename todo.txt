@@ -1,0 +1,8 @@
+parsing sparse data
+xplot stats
+logging : railway + logging
+
+/!\ triangle's pascal
+type providers
+gitlab codereview
+training fsharp
