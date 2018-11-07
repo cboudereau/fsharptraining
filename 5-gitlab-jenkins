@@ -1,0 +1,32 @@
+setup docker network : 
+docker network create cicd
+
+setup jenkins : 
+https://github.com/jenkinsci/docker/blob/master/README.md
+docker run --hostname jenkins --network cicd --name jenkins -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts
+
+setup gitlab : 
+https://hub.docker.com/r/gitlab/gitlab-ce/
+docker run --hostname gitlab --network cicd --name gitlab -p 8081:80 -p 2222:22 -p 4443:443 gitlab/gitlab-ce
+
+plugin Jenkins -> Gitlab
+https://docs.gitlab.com/ee/integration/jenkins.html
+
+install gitlab jenkins plugin on Jenkins
+https://wiki.jenkins.io/display/JENKINS/GitLab+Plugin
+https://github.com/jenkinsci/gitlab-plugin
+
+In Jenkins : 
+Create a gitlab jenkins user in Jenkins
+Login with gitlab account
+Generate token ie : 1193d96e8200f3a6a9a6ea7c1a0cc65a9b
+Create ssh keys : 
+	docker exec -it jenkins /bin/bash
+	ssh-keygen
+Copy public key
+
+In Gitlab : 
+Create jenkins user
+Login with jenkins and copy ssh key
+Add jenkins user to project
+Gitlab Integrations -> Webhook
