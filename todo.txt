@@ -1,9 +1,20 @@
-parsing sparse data
-xplot stats
-logging : railway + logging
-
 triangle's pascal
+
+parsing sparse data
+
+xplot stats
+
+logging : railway + logging, serilog
+
 gitlab codereview
+
+function : 
+ - Azure function csharp + fsharp
+ - webserver that takes the fsharp function (binding trigger http)
+ - scrapping public free proxies
+    - http://freeproxylist.org/en/free-proxy-list.htm
+    - https://free-proxy-list.net/anonymous-proxy.html
+
 training fsharp
   > type providers
   > Interoperability

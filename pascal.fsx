@@ -22,7 +22,7 @@ let coefficient n p =
             coef (top + 1) newHead
     coef 0 [1]
 
-coefficient 10 5
+coefficient 50 8
 coefficient 3 2
 coefficient 4 3 = 4
 
