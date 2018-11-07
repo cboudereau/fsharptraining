@@ -3,11 +3,11 @@ docker network create cicd
 
 setup jenkins : 
 https://github.com/jenkinsci/docker/blob/master/README.md
-docker run --hostname jenkins --network cicd --name jenkins -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts
+docker run --network cicd --hostname jenkins --name jenkins -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts
 
 setup gitlab : 
 https://hub.docker.com/r/gitlab/gitlab-ce/
-docker run --hostname gitlab --network cicd --name gitlab -p 8081:80 -p 2222:22 -p 4443:443 gitlab/gitlab-ce
+docker run --network cicd --hostname gitlab --name gitlab -p 8081:80 -p 2222:22 -p 4443:443 gitlab/gitlab-ce
 
 plugin Jenkins -> Gitlab
 https://docs.gitlab.com/ee/integration/jenkins.html
@@ -26,6 +26,7 @@ Create ssh keys :
 Copy public key
 
 In Gitlab : 
+Disable AutoDevops
 Create jenkins user
 Login with jenkins and copy ssh key
 Add jenkins user to project
